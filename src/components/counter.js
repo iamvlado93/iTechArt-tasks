@@ -1,5 +1,5 @@
 import React from 'react';
-import {} from './counter.css'
+import {} from './counter.css';
 
 class CounterComponent extends React.Component {
     state = {
