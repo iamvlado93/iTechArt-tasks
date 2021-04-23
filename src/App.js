@@ -1,12 +1,10 @@
 import './App.css';
-import CounterComponent from './components/counter-constructor/counter';
+import CounterConstructorComponent from './components/counter-constructor/counter-constructor';
 
 function App() {
   return (
     <div className='wrap'>
-      <CounterComponent/> 
-    </div>
-    
+      <CounterConstructorComponent/></div>
   );
 }
 
