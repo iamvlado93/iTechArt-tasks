@@ -1,10 +1,18 @@
 import './App.css';
-import CounterConstructorComponent from './components/counter-constructor/counter-constructor';
+import SignUpFormComponent from './components/registration-form';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
     <div className='wrap'>
-      <CounterConstructorComponent/></div>
+      <SignUpFormComponent/>
+    </div>
   );
 }
 
