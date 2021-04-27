@@ -20,23 +20,13 @@ export default function App() {
       <main className='main'>
         <Switch>
           <Route exact path="/Counter">
-            <SimpleCounter />
+            <Counter />
           </Route>
           <Route path="/CounterConstructor">
-            <CreateCounter />
+            <CounterConstructor />
           </Route>
         </Switch>
       </main>
     </Router>
   );
 }
-
-function SimpleCounter() {
-  return (
-      <Counter />
-  )};
-
-function CreateCounter() {
-  return (
-      <CounterConstructor />
-  )};
