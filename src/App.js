@@ -1,17 +1,10 @@
 import './App.css';
-import SignUpFormComponent from './components/registration-form';
-
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import RegistrationForm from './modules/RegistrationForm';
 
 function App() {
   return (
     <div className='wrap'>
-      <SignUpFormComponent/>
+      <RegistrationForm/>
     </div>
   );
 }
