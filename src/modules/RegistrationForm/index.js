@@ -21,7 +21,6 @@ export default function RegistrationForm () {
       console.log('Запрос отправлен', 'Имя: ' + values.firstName, 'Почта: ' + values.email, 'Телефон: ' + values.phone, 'Пароль: ' + values.password)
     }
     setSubmitted(true);
-    
   }
 
   const handleFirstNameInputChange = (event) => {setValues({...values, firstName: event.target.value})};
@@ -76,7 +75,7 @@ export default function RegistrationForm () {
           {submitted && !values.password? <span>Please enter your password</span> : null}
           
           {submitted &&  values.firstName && values.phone && values.email && values.password? (
-          <button onClick={() => {history.push("/login")}} className="button" type="submit">Register</button>
+          <button onClick={() => {history.push("/profile")}} className="button" type="submit">Register</button>
           ) : (
           <button className="button" type="submit">Register</button> )}
       </form>

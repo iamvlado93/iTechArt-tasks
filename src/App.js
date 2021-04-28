@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import RegistrationForm from './modules/RegistrationForm/index';
-import Login from './modules/RegistrationForm/login'
+import Profile from './modules/RegistrationForm/profile';
 import {
   BrowserRouter as Router,
   Switch,
@@ -16,8 +16,8 @@ function App() {
           <Route exact path='/registration'>
             <RegistrationForm/>
           </Route>
-          <Route exact path='/login'>
-            <Login/>
+          <Route exact path='/profile'>
+            <Profile/>
           </Route> 
         </Switch>
       </div>
