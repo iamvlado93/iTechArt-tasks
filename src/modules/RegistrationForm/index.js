@@ -1,118 +1,86 @@
-import React, {useState} from 'react';
+import React, {useState, } from 'react';
+import {useHistory} from 'react-router-dom';
 import './index.css';
 
 export default function RegistrationForm () {
-  
-  const [phone, setPhone] = useState('');
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [correctPassword, setCorrectPassword] = useState('');
 
-  const changePhone = event => {setPhone( {phone: event.target.value} )};
-  const changeName = event => {setName( {name: event.target.value} )};
-  const changeEmail = event => {setEmail( {email: event.target.value} )};
-  const changePassword = event => {setPassword( {password: event.target.value} )};
-  const changeCorrectPassword = event => {setCorrectPassword( {correctPassword: event.target.value} )};
+  const [values, setValues] = useState({
+    firstName: '',
+    email: '',
+    phone: '',
+    password: '',
+  })
 
-  
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const isValid = validate();
-    if (isValid === true) {
-      console.log('Запрос отправлен', phone, name, email, password, correctPassword);
-      this.setState(phone, name, email, password, correctPassword);
-      this.setState({phoneError: '', nameError: '', emailError: '', passwordError: '', correctPasswordError: ''})
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(values.firstName && values.email && values.phone && values.password) {
+      setValid(true)
+      console.log('Запрос отправлен', 'Имя: ' + values.firstName, 'Почта: ' + values.email, 'Телефон: ' + values.phone, 'Пароль: ' + values.password)
     }
-  };
-
-  const validate = () => {
-    const [phoneError, setPhoneError] = "";
-    const [nameError, setNameError] = "";
-    const [emailError, setEmailError] = "";
-    const [passwordError, setPasswordError] = "";
-    const [correctPasswordError, setCorrectPasswordError] = "";
-
-    if (setPhone.length !== 10 || setPhone[0] !== '+') {
-      setPhoneError = "Phone number should start with '+' and contain 9 digits";
-    }
+    setSubmitted(true);
     
-    if (!setName) {
-      setNameError = "Name cannot be blank";
-    }
+  }
 
-    if (!setEmail.includes("@")) {
-      setEmailError = "Invalid email, should contain '@'";
-    }
+  const handleFirstNameInputChange = (event) => {setValues({...values, firstName: event.target.value})};
+  const handleEmailInputChange = (event) => {setValues({...values, email: event.target.value})};
+  const handlePhoneInputChange = (event) => {setValues({...values, phone: event.target.value})};
+  const handlePasswordInputChange = (event) => {setValues({...values, password: event.target.value})};
 
-    if (setPassword.length < 6) {
-      setPasswordError = "Password should be more than 6 characters";
-    }
+  const history = useHistory();
+  
+  return (
+    <div className="form-container">
+      <form className="register-form" onSubmit={handleSubmit}>
+        {submitted && valid ? <div className='success-message'>You have successfully registered!</div> : null}
+        <input
+          onChange={handleFirstNameInputChange}
+          value={values.firstName}
+          id="first-name"
+          className="form-field"
+          type="text"
+          placeholder="First Name"
+          name="firstName"/>
+          {submitted && !values.firstName? <span>Please enter your name</span> : null}
 
-    if (setCorrectPassword !== correctPassword) {
-      setCorrectPasswordError = "Your password does not match";
-    }
-
-    if (phoneError || nameError || emailError || passwordError || correctPasswordError) {
-      this.setState({ phoneError, nameError, emailError, passwordError, correctPasswordError });
-      return false;
-    }
-    return true;
-  };
-
-    return (
-      <form className='form' onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone"
-            value={setPhone}
-            onChange={changePhone}
-          />
-          <div className='error' style={{ fontSize: 12, color: "red" }}>
-            {this.state.phoneError}
-          </div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Full Name"
-            value={setName}
-            onChange={changeName}
-          />
-          <div className='error' style={{ fontSize: 12, color: "red" }}>
-            {this.state.nameError}
-          </div>
-          <input
-            type="text"
-            name="email"
-            placeholder="E-mail"
-            value={setEmail}
-            onChange={changeEmail}
-          />
-          <div className='error' style={{ fontSize: 12, color: "red" }}>
-            {this.state.emailError}
-          </div>
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={setPassword}
-            onChange={changePassword}
-          />
-          <div className='error' style={{ fontSize: 12, color: "red" }}>
-            {this.state.passwordError}
-          </div>
-          <input
-            type="password"
-            name="password"
-            placeholder="Confirm Password"
-            value={setCorrectPassword}
-            onChange={changeCorrectPassword}
-          />
-          <div className='error' style={{ fontSize: 12, color: "red" }}>
-            {this.state.correctPasswordError}
-          </div>
-          <button type="submit">Sign Up</button>
+        <input
+          onChange={handleEmailInputChange}
+          value={values.email}
+          id="email"
+          className="form-field"
+          type="text"
+          placeholder="Email"
+          name="email"/>
+          {submitted && !values.email? <span>Please enter your email</span> : null}
+          
+        <input
+          onChange={handlePhoneInputChange}
+          value={values.phone}
+          id="phone"
+          className="form-field"
+          type="text"
+          placeholder="Phone number"
+          name="phone"/>
+          {submitted && !values.phone? <span>Please enter your phone number</span> : null}
+          
+        <input
+          onChange={handlePasswordInputChange}
+          value={values.password}
+          id="password"
+          className="form-field"
+          type="password"
+          placeholder="Password"
+          name="password"/>
+          {submitted && !values.password? <span>Please enter your password</span> : null}
+          
+          {submitted &&  values.firstName && values.phone && values.email && values.password? (
+          <button onClick={() => {history.push("/login")}} className="button" type="submit">Register</button>
+          ) : (
+          <button className="button" type="submit">Register</button> )}
       </form>
-    );
+    </div>
+  );
 }
+    

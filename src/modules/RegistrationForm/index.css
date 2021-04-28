@@ -1,9 +1,32 @@
 form {
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     width: 400px;
-    background-color: rgb(69, 69, 204);
+    background-color: rgb(81, 81, 145);
 }
 
 input {
     width: 100%;
+    margin-top: 10px;
+}
+
+.button {
+    margin-top: 10px;
+    width: 100px;
+}
+
+span {
+    color: red;
+}
+
+.success-message {
+    color: rgb(251, 255, 2);
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.login-main {
+    display: flex;
+    flex-direction: column;
 }

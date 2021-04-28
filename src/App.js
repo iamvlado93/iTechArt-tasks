@@ -1,11 +1,27 @@
+import React from 'react';
 import './App.css';
-import RegistrationForm from './modules/RegistrationForm';
+import RegistrationForm from './modules/RegistrationForm/index';
+import Login from './modules/RegistrationForm/login'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className='wrap'>
-      <RegistrationForm/>
-    </div>
+    <Router>
+      <div className='wrap'>
+        <Switch>
+          <Route exact path='/registration'>
+            <RegistrationForm/>
+          </Route>
+          <Route exact path='/login'>
+            <Login/>
+          </Route> 
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
