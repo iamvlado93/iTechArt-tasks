@@ -19,6 +19,7 @@ export default function RegistrationForm () {
     if(values.firstName && values.email && values.phone && values.password) {
       setValid(true)
       console.log('Запрос отправлен', 'Имя: ' + values.firstName, 'Почта: ' + values.email, 'Телефон: ' + values.phone, 'Пароль: ' + values.password)
+      history.push("/profile")
     }
     setSubmitted(true);
   }
@@ -33,7 +34,6 @@ export default function RegistrationForm () {
   return (
     <div className="form-container">
       <form className="register-form" onSubmit={handleSubmit}>
-        {submitted && valid ? <div className='success-message'>You have successfully registered!</div> : null}
         <input
           onChange={handleFirstNameInputChange}
           value={values.firstName}
@@ -74,10 +74,10 @@ export default function RegistrationForm () {
           name="password"/>
           {submitted && !values.password? <span>Please enter your password</span> : null}
           
-          {submitted &&  values.firstName && values.phone && values.email && values.password? (
-          <button onClick={() => {history.push("/profile")}} className="button" type="submit">Register</button>
+          {submitted && valid && values.firstName && values.phone && values.email && values.password ? (
+          <button onClick={() => {history.push("/profile")}} className="button-submit" type="submit">Register</button>
           ) : (
-          <button className="button" type="submit">Register</button> )}
+          <button className='button-submit' type="submit">Register</button> )}
       </form>
     </div>
   );

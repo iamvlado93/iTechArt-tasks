@@ -1,28 +1,44 @@
 import React from 'react';
 import './App.css';
 import RegistrationForm from './modules/RegistrationForm/index';
-import Profile from './modules/RegistrationForm/profile';
+import Profile from './modules/RegistrationForm/Profile';
+import Counter from './modules/Counter';
+import CounterConstructor from './modules/CounterConstructor';
+
 import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Link,
 } from "react-router-dom";
 
-function App() {
+export default function App() {
+
   return (
     <Router>
-      <div className='wrap'>
+      <nav className='navigation'>
+        <Link to='/counter'><button>Counter</button></Link>
+        <Link to='/counter-constructor'><button>Counter Constructor</button></Link>
+        <Link to='/registration-form'><button>Registration Form</button></Link>
+      </nav>
+
+      <main className='main'>
         <Switch>
-          <Route exact path='/registration'>
+          <Route path="/counter">
+            <Counter />
+          </Route>
+          <Route path="/counter-constructor">
+            <CounterConstructor />
+          </Route>
+          <Route path="/registration-form">
             <RegistrationForm/>
           </Route>
-          <Route exact path='/profile'>
+          <Route path="/profile">
             <Profile/>
           </Route> 
         </Switch>
-      </div>
+      </main>
+
     </Router>
   );
 }
-
-export default App;
