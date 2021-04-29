@@ -19,12 +19,6 @@
     border-radius: 20px;
 }
 
-.button__add {
-    height: 80px;
-    width: 100px;
-    margin: 5px;
-}
-
 .main {
     height: 100vh;
     width: 100vw;

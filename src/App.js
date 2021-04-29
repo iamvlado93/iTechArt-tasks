@@ -1,4 +1,7 @@
+import React from 'react';
 import './App.css';
+import RegistrationForm from './modules/RegistrationForm/index';
+import Profile from './modules/RegistrationForm/Profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
 
@@ -6,7 +9,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
 } from "react-router-dom";
 
 export default function App() {
@@ -14,19 +17,28 @@ export default function App() {
   return (
     <Router>
       <nav className='navigation'>
-        <Link to='/Counter'><button>Counter</button></Link>
-        <Link to='/CounterConstructor'><button>Counter Constructor</button></Link>
+        <Link to='/counter'><button>Counter</button></Link>
+        <Link to='/counter-constructor'><button>Counter Constructor</button></Link>
+        <Link to='/registration-form'><button>Registration Form</button></Link>
       </nav>
+
       <main className='main'>
         <Switch>
-          <Route exact path="/Counter">
+          <Route path="/counter">
             <Counter />
           </Route>
-          <Route path="/CounterConstructor">
+          <Route path="/counter-constructor">
             <CounterConstructor />
           </Route>
+          <Route path="/registration-form">
+            <RegistrationForm/>
+          </Route>
+          <Route path="/profile">
+            <Profile/>
+          </Route> 
         </Switch>
       </main>
+
     </Router>
   );
 }
