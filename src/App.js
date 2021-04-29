@@ -24,7 +24,7 @@ export default function App() {
         <Link to='/styled-components'><button>Styled Components</button></Link>
       </nav>
 
-      <main className='main'>
+      
         <Switch>
           <Route path="/counter">
             <Counter />
@@ -40,11 +40,12 @@ export default function App() {
             <Route path="/profile">
               <Profile/>
             </Route>
+            
           <Route path="/styled-components">
             <StyledComponents />  
           </Route> 
         </Switch>
-      </main>
+      
 
     </Router>
   );
