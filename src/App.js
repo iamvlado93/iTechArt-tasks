@@ -5,6 +5,7 @@ import Profile from './modules/RegistrationForm/Profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
 import TodoForm from './modules/ToDoApp/index';
+import CounterRedux from './modules/CounterRedux/index';
 
 import {
   BrowserRouter as Router,
@@ -22,6 +23,7 @@ export default function App() {
         <Link to='/counter-constructor'><button>Counter Constructor</button></Link>
         <Link to='/registration-form'><button>Registration Form</button></Link>
         <Link to='/todo-app'><button>To do App</button></Link>
+        <Link to='/counter-redux'><button>Counter Redux</button></Link>
       </nav>
 
       <main className='main'>
@@ -40,10 +42,12 @@ export default function App() {
           </Route>
           <Route path="/todo-app">
             <TodoForm/>
+          </Route>
+          <Route path="/counter-redux">
+            <CounterRedux/>
           </Route> 
         </Switch>
       </main>
-
     </Router>
   );
 }
