@@ -10,7 +10,7 @@ import RegistrationForm from './modules/RegistrationForm';
 import Profile from './modules/RegistrationForm/Profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
-import TodoForm from './modules/ToDoApp/index';
+import TodoForm from './modules/ToDoApp';
 import CounterRedux from './modules/CounterRedux';
 import StyledComponents from './modules/StyledComponents';
 
