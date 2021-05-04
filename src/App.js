@@ -4,7 +4,7 @@ import RegistrationForm from './modules/RegistrationForm/index';
 import Profile from './modules/RegistrationForm/Profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
-import StyledComponents from './modules/StyledComponents';
+import TodoForm from './modules/ToDoApp/index';
 
 import {
   BrowserRouter as Router,
@@ -37,13 +37,15 @@ export default function App() {
           <Route path="/registration-form">
             <RegistrationForm/>
           </Route>
-            <Route path="/profile">
-              <Profile/>
-            </Route>
-            
-          <Route path="/styled-components">
-            <StyledComponents />  
+
+          <Route path="/profile">
+            <Profile/>
+          </Route>
+
+          <Route path="/todo-app">
+            <TodoForm/>
           </Route> 
+          
         </Switch>
       
 
