@@ -6,9 +6,6 @@ import Header from './Elements/Header';
 import Body from './Elements/Body';
 import H1 from './Elements/H1';
 import LoadingSlider from './Elements/LoadingSlider';
-import Img from './Elements/Img';
-
-import './index.css';
 
 export default function StyledComponents () {
 
@@ -20,8 +17,7 @@ export default function StyledComponents () {
             </Header>
             <Body>
                 <H1>Заголовок</H1>
-                <LoadingSlider></LoadingSlider>
-                <Img>3</Img>
+                <LoadingSlider />
             </Body>
         </Main>
     );
