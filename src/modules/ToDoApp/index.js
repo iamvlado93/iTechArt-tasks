@@ -1,4 +1,3 @@
-import { checkPropTypes } from 'prop-types';
 import React, { useState, useEffect } from 'react';
 import Form from './Form';
 import TodoList from './TodoList';
@@ -52,14 +51,14 @@ const TodoForm = () => {
             <Form 
                 todos={todos}
                 setStatus={setStatus}
-                setTodos={ setTodos }
+                setTodos={setTodos}
                 inputText={inputText}
-                setInputText={ setInputText }
+                setInputText={setInputText}
             />
             <TodoList 
                 todos={todos} 
-                setTodos={ setTodos }
-                filteredTodos={ filteredTodos }
+                setTodos={setTodos}
+                filteredTodos={filteredTodos}
             />
         </div>
     )

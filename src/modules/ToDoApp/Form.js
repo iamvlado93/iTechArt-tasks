@@ -1,7 +1,8 @@
 import React from 'react';
+
 import './index.css';
 
-const Form = ( {setInputText, setTodos, todos, inputText, setStatus } ) => {
+const Form = ({setInputText, setTodos, todos, inputText, setStatus}) => {
 
     const inputHandler = ( e ) => {
         setInputText(e.target.value);
@@ -22,19 +23,19 @@ const Form = ( {setInputText, setTodos, todos, inputText, setStatus } ) => {
     return (
         <form className='form'>
             <input
-                value={ inputText }  
-                onChange={ inputHandler } 
+                value={inputText}  
+                onChange={inputHandler} 
                 type="text" className="todo-input" 
             />
             <button 
-                onClick={ submitHandler } 
+                onClick={submitHandler} 
                 className="todo-button" 
                 type="submit"
             >
                 <i className="fas fa-plus-square"></i>
             </button>
             <div className="select">
-                <select onChange={ statusHandler } name="todos" className="filter-todo">
+                <select onChange={statusHandler} name="todos" className="filter-todo">
                     <option value="all">All</option>
                     <option value="completed">Completed</option>
                     <option value="uncompleted">Uncompleted</option>

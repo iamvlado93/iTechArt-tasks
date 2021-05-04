@@ -58,10 +58,8 @@ export default function App() {
           <Route path="/styled-components">
             <StyledComponents />
           </Route>
-          
         </Switch>
       </main>
-      
     </Router>
   );
 }

@@ -1,6 +1,8 @@
-import {useState} from 'react';
-import './index.css';
+import { useState } from 'react';
+
 import Counter from './Counter';
+
+import './index.css';
 
 function CounterConstructor() {
     const [counters, setCounters] = useState([])
@@ -17,11 +19,11 @@ function CounterConstructor() {
   
     return (
     <div className='wrap'>
-        <button onClick={createCounter}>Create</button>
+        <button onClick={ createCounter }>Create</button>
         {counters.map((counter) => (
-          <Counter getCounterValue={getCounterValue} key={counter.name}/> 
+          <Counter getCounterValue={ getCounterValue } key={ counter.name }/> 
         ))}
-        <span>Кол-во пол.кликов: {sum}</span>
+        <span>Кол-во пол.кликов: { sum }</span>
       </div>
     );
   }
