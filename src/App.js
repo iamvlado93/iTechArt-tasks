@@ -11,7 +11,8 @@ import Profile from './modules/RegistrationForm/Profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
 import TodoForm from './modules/ToDoApp/index';
-import CounterRedux from './modules/CounterRedux/index';
+import CounterRedux from './modules/CounterRedux';
+import StyledComponents from './modules/StyledComponents';
 
 import './App.css';
 
