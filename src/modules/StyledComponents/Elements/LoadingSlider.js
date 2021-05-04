@@ -33,7 +33,7 @@ const animation = keyframes`
     }
 `;
 
-const LoadingSlider = styled.div`
+const LoadingSliderComp = styled.div`
     position: absolute;
     margin: 15px;
     height: 10px;
@@ -44,4 +44,4 @@ const LoadingSlider = styled.div`
     animation: ${animation} 3s ease infinite;
 `;
 
-export default LoadingSlider;
+export default LoadingSliderComp;

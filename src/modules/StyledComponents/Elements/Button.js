@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-const Button = styled.button`
+const ButtonComp = styled.button`
     width: 100px;
     height: 30px;
     background: transparent;
@@ -16,4 +16,4 @@ ${props => props.primary && css`
     color: white;
 `}`;
 
-export default Button;
+export default ButtonComp;

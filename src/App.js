@@ -29,37 +29,35 @@ export default function App() {
         <Link to='/styled-components'><button>Styled Components</button></Link>
       </nav>
 
-      <main>
-        <Switch>
-          <Route path="/counter">
-            <Counter />
-          </Route>
+      <Switch>
+        <Route path="/counter">
+          <Counter />
+        </Route>
 
-          <Route path="/counter-constructor">
-            <CounterConstructor />
-          </Route>
+        <Route path="/counter-constructor">
+          <CounterConstructor />
+        </Route>
 
-          <Route path="/registration-form">
-            <RegistrationForm/>
-          </Route>
+        <Route path="/registration-form">
+          <RegistrationForm/>
+        </Route>
 
-          <Route path="/profile">
-            <Profile/>
-          </Route>
+        <Route path="/profile">
+          <Profile/>
+        </Route>
 
-          <Route path="/todo-app">
-            <TodoForm/>
-          </Route>
+        <Route path="/todo-app">
+          <TodoForm/>
+        </Route>
 
-          <Route path="/counter-redux">
-            <CounterRedux/>
-          </Route> 
+        <Route path="/counter-redux">
+          <CounterRedux/>
+        </Route> 
 
-          <Route path="/styled-components">
-            <StyledComponents />
-          </Route>
-        </Switch>
-      </main>
+        <Route path="/styled-components">
+          <StyledComponents />
+        </Route>
+      </Switch>
     </Router>
   );
 }

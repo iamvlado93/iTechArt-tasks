@@ -1,24 +1,24 @@
 import React from 'react';
 
-import Button from './Elements/Button';
-import Main from './Elements/Main';
-import Header from './Elements/Header';
-import Body from './Elements/Body';
-import H1 from './Elements/H1';
-import LoadingSlider from './Elements/LoadingSlider';
+import ButtonComp from './Elements/Button';
+import MainComp from './Elements/Main';
+import HeaderComp from './Elements/Header';
+import BodyComp from './Elements/Body';
+import H1Comp from './Elements/H1';
+import LoadingSliderComp from './Elements/LoadingSlider';
 
 export default function StyledComponents () {
 
     return (
-        <Main>
-            <Header>
-                <Button>Обычная</Button>
-                <Button primary>C пропсами</Button>
-            </Header>
-            <Body>
-                <H1>Заголовок</H1>
-                <LoadingSlider />
-            </Body>
-        </Main>
+        <MainComp>
+            <HeaderComp>
+                <ButtonComp>Обычная</ButtonComp>
+                <ButtonComp primary>C пропсами</ButtonComp>
+            </HeaderComp>
+            <BodyComp>
+                <H1Comp>Заголовок</H1Comp>
+                <LoadingSliderComp />
+            </BodyComp>
+        </MainComp>
     );
 }

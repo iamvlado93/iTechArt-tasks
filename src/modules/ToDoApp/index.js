@@ -17,7 +17,7 @@ const TodoForm = () => {
     useEffect(() => {
         filterHandler();
         saveLocalTodos();
-    }, [todos, status]);
+    },);
 
     const filterHandler = () => {
         switch(status) {

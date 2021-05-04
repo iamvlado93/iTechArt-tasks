@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Header = styled.header`
+const HeaderComp = styled.header`
     display: flex;
     align-items: center;
     background-color: green;
@@ -8,4 +8,4 @@ const Header = styled.header`
     width: 100%;
 `;
 
-export default Header;
+export default HeaderComp;

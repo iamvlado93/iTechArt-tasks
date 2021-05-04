@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-const Body = styled.body`
+const BodyComp = styled.div`
     position: relative;
     background-color: black;
     color: white;
 `;
 
-export default Body;
+export default BodyComp;
