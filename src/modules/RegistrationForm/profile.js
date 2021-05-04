@@ -3,16 +3,22 @@ import { useHistory } from 'react-router-dom';
 
 import './index.css';
 
-export default function Profile () {
+export default function Profile() {
+  const history = useHistory();
 
-    const history = useHistory();
-
-    return (
-        <div className='profile-main'>
-            <div className='success-message'>You have successfully registered!</div>
-            <h2>И вы вошли в свой кабинет. Ура</h2>
-            <button className='button-submit' onClick={() => {history.push("/registration-form")}}>Выйти из кабинета</button>
-        </div>
-    )
+  return (
+    <div className="profile-main">
+      <div className="success-message">You have successfully registered!</div>
+      <h2>И вы вошли в свой кабинет. Ура</h2>
+      <button
+        type="button"
+        className="button-submit"
+        onClick={() => {
+          history.push('/registration-form');
+        }}
+      >
+        Выйти из кабинета
+      </button>
+    </div>
+  );
 }
-
