@@ -25,30 +25,42 @@ export default function App() {
         <Link to='/registration-form'><button>Registration Form</button></Link>
         <Link to='/todo-app'><button>To do App</button></Link>
         <Link to='/counter-redux'><button>Counter Redux</button></Link>
+        <Link to='/styled-components'><button>Styled Components</button></Link>
       </nav>
 
-      <main className='main'>
+      <main>
         <Switch>
           <Route path="/counter">
             <Counter />
           </Route>
+
           <Route path="/counter-constructor">
             <CounterConstructor />
           </Route>
+
           <Route path="/registration-form">
             <RegistrationForm/>
           </Route>
+
           <Route path="/profile">
             <Profile/>
           </Route>
+
           <Route path="/todo-app">
             <TodoForm/>
           </Route>
+
           <Route path="/counter-redux">
             <CounterRedux/>
           </Route> 
+
+          <Route path="/styled-components">
+            <StyledComponents />
+          </Route>
+          
         </Switch>
       </main>
+      
     </Router>
   );
 }
