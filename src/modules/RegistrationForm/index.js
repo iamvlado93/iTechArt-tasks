@@ -1,5 +1,6 @@
-import React, {useState, } from 'react';
-import {useHistory} from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import './index.css';
 
 export default function RegistrationForm () {
@@ -24,7 +25,7 @@ export default function RegistrationForm () {
     setSubmitted(true);
   }
 
-  const handleFirstNameInputChange = (event) => {setValues({...values, firstName: event.target.value})};
+  const handleFirstNameInputChange = ({target}) => {setValues({...values, firstName: target.value})};
   const handleEmailInputChange = (event) => {setValues({...values, email: event.target.value})};
   const handlePhoneInputChange = (event) => {setValues({...values, phone: event.target.value})};
   const handlePasswordInputChange = (event) => {setValues({...values, password: event.target.value})};

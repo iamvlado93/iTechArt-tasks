@@ -1,18 +1,19 @@
 import React from 'react';
-import './App.css';
-import RegistrationForm from './modules/RegistrationForm/index';
-import Profile from './modules/RegistrationForm/Profile';
-import Counter from './modules/Counter';
-import CounterConstructor from './modules/CounterConstructor';
-import TodoForm from './modules/ToDoApp/index';
-import CounterRedux from './modules/CounterRedux/index';
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
+
+import RegistrationForm from './modules/RegistrationForm';
+import Profile from './modules/RegistrationForm/Profile';
+import Counter from './modules/Counter';
+import CounterConstructor from './modules/CounterConstructor';
+import TodoForm from './modules/ToDoApp/index';
+import CounterRedux from './modules/CounterRedux/index';
+
+import './App.css';
 
 export default function App() {
 
