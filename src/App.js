@@ -1,15 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-import RegistrationForm from "./modules/RegistrationForm";
-import Profile from "./modules/RegistrationForm/Profile";
-import Counter from "./modules/Counter";
-import CounterConstructor from "./modules/CounterConstructor";
-import TodoForm from "./modules/ToDoApp";
-import CounterRedux from "./modules/CounterRedux";
-import StyledComponents from "./modules/StyledComponents";
+import RegistrationForm from './modules/RegistrationForm';
+import Profile from './modules/RegistrationForm/Profile';
+import Counter from './modules/Counter';
+import CounterConstructor from './modules/CounterConstructor';
+import TodoForm from './modules/ToDoApp';
+import CounterRedux from './modules/CounterRedux';
+import StyledComponents from './modules/StyledComponents';
 
-import "./App.css";
+import ROUTES from './const';
+
+import './App.css';
 
 export default function App() {
   return (
@@ -36,31 +38,31 @@ export default function App() {
       </nav>
 
       <Switch>
-        <Route path="/counter">
+        <Route path={ROUTES.COUNTER}>
           <Counter />
         </Route>
 
-        <Route path="/counter-constructor">
+        <Route path={ROUTES.COUNTER_CONSTRUCTOR}>
           <CounterConstructor />
         </Route>
 
-        <Route path="/registration-form">
+        <Route path={ROUTES.REGISTRATION_FORM}>
           <RegistrationForm />
         </Route>
 
-        <Route path="/profile">
+        <Route path={ROUTES.PROFILE}>
           <Profile />
         </Route>
 
-        <Route path="/todo-app">
+        <Route path={ROUTES.TODO_APP}>
           <TodoForm />
         </Route>
 
-        <Route path="/counter-redux">
+        <Route path={ROUTES.COUNTER_REDUX}>
           <CounterRedux />
         </Route>
 
-        <Route path="/styled-components">
+        <Route path={ROUTES.STYLED_COMPONENTS}>
           <StyledComponents />
         </Route>
       </Switch>
