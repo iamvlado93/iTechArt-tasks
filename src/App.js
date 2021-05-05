@@ -17,22 +17,22 @@ export default function App() {
   return (
     <Router>
       <nav className="navigation">
-        <Link to="/counter">
+        <Link to={ROUTES.COUNTER}>
           <button type="button">Counter</button>
         </Link>
-        <Link to="/counter-constructor">
+        <Link to={ROUTES.COUNTER_CONSTRUCTOR}>
           <button type="button">Counter Constructor</button>
         </Link>
-        <Link to="/registration-form">
+        <Link to={ROUTES.REGISTRATION_FORM}>
           <button type="button">Registration Form</button>
         </Link>
-        <Link to="/todo-app">
+        <Link to={ROUTES.TODO_APP}>
           <button type="button">To do App</button>
         </Link>
-        <Link to="/counter-redux">
+        <Link to={ROUTES.COUNTER_REDUX}>
           <button type="button">Counter Redux</button>
         </Link>
-        <Link to="/styled-components">
+        <Link to={ROUTES.STYLED_COMPONENTS}>
           <button type="button">Styled Components</button>
         </Link>
       </nav>
