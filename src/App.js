@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 import RegistrationForm from './modules/RegistrationForm';
-import Profile from './modules/RegistrationForm/Profile';
+import Profile from './modules/RegistrationForm/profile';
 import Counter from './modules/Counter';
 import CounterConstructor from './modules/CounterConstructor';
 import TodoForm from './modules/ToDoApp';
