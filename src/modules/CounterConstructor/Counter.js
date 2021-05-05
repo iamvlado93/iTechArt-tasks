@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 
 import './index.css';
 
-const Counter = ({ getCounterValue }) => {
+const Counter = ({ deleteCounters, counter }) => {
   const [count, setCount] = useState(0);
 
   const countPlus = () => {
     setCount(count + 1);
-    getCounterValue(1);
   };
 
   const countMinus = () => {
     setCount(count - 1);
-    getCounterValue(1);
   };
 
   return (
@@ -23,6 +21,9 @@ const Counter = ({ getCounterValue }) => {
       {count}
       <button type="button" onClick={countMinus} className="button">
         -
+      </button>
+      <button type="button" onClick={() => deleteCounters(counter.name)}>
+        Удалить
       </button>
     </div>
   );

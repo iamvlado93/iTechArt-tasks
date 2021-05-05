@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useState } from 'react';
 
 import Counter from './Counter';
@@ -6,14 +7,15 @@ import './index.css';
 
 function CounterConstructor() {
   const [counters, setCounters] = useState([]);
-  const [sum, setSum] = useState(0);
 
   const createCounter = () => {
-    setCounters([...counters, { name: `${counters.length + 1}` }]);
+    setCounters([...counters, { name: Math.random() }]);
   };
 
-  const getCounterValue = (value) => {
-    setSum(sum + value);
+  console.log(counters);
+
+  const deleteCounters = (name) => {
+    setCounters(counters.filter((counter) => counter.name !== name));
   };
 
   return (
@@ -22,9 +24,9 @@ function CounterConstructor() {
         Create
       </button>
       {counters.map((counter) => (
-        <Counter getCounterValue={getCounterValue} key={counter.name} />
+        <Counter key={counter.name} deleteCounters={deleteCounters} counter={counter} />
       ))}
-      <span>Кол-во пол.кликов: {sum}</span>
+      {JSON.stringify(counters)}
     </div>
   );
 }
