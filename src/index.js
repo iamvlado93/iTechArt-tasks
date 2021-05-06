@@ -5,7 +5,7 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 
-import allReducers from "./modules/CounterRedux/reducers";
+import allReducers from "./modules/allReducers";
 
 import "./index.css";
 
