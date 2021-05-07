@@ -5,12 +5,12 @@ import { Provider } from "react-redux";
 
 import App from "./App";
 
-import allReducers from "./modules/allReducers";
-
 import "./index.css";
 
+import todoReducer from "./modules/allReducers/todoReducer";
+
 const store = createStore(
-  allReducers,
+  todoReducer, 
   // eslint-disable-next-line no-underscore-dangle
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
