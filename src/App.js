@@ -8,10 +8,12 @@ import CounterConstructor from './modules/CounterConstructor';
 import TodoForm from './modules/ToDoApp';
 import CounterRedux from './modules/CounterRedux';
 import StyledComponents from './modules/StyledComponents';
+import SimpleTodoRedux from './modules/SimpleTodoRedux';
 
 import ROUTES from './const';
 
 import './App.css';
+
 
 export default function App() {
   return (
@@ -34,6 +36,9 @@ export default function App() {
         </Link>
         <Link to={ROUTES.STYLED_COMPONENTS}>
           <button type="button">Styled Components</button>
+        </Link>
+        <Link to={ROUTES.SIMPLE_TODO_REDUX}>
+          <button type="button">Simple Todo Redux</button>
         </Link>
       </nav>
 
@@ -64,6 +69,10 @@ export default function App() {
 
         <Route path={ROUTES.STYLED_COMPONENTS}>
           <StyledComponents />
+        </Route>
+
+        <Route path={ROUTES.SIMPLE_TODO_REDUX}>
+          <SimpleTodoRedux />
         </Route>
       </Switch>
     </Router>

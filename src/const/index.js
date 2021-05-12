@@ -6,6 +6,7 @@ const ROUTES = {
   TODO_APP: '/todo-app',
   COUNTER_REDUX: '/counter-redux',
   STYLED_COMPONENTS: '/styled-components',
+  SIMPLE_TODO_REDUX: '/simple-todo-redux',
 };
 
 export default ROUTES;
