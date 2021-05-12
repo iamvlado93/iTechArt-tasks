@@ -28,14 +28,14 @@ export default function RegistrationForm() {
   const handleFirstNameInputChange = ({ target }) => {
     setValues({ ...values, firstName: target.value });
   };
-  const handleEmailInputChange = (target) => {
-    setValues({ ...values, email: target.value });
+  const handleEmailInputChange = (event) => {
+    setValues({ ...values, email: event.target.value });
   };
-  const handlePhoneInputChange = (target) => {
-    setValues({ ...values, phone: target.value });
+  const handlePhoneInputChange = (event) => {
+    setValues({ ...values, phone: event.target.value });
   };
-  const handlePasswordInputChange = (target) => {
-    setValues({ ...values, password: target.value });
+  const handlePasswordInputChange = (event) => {
+    setValues({ ...values, password: event.target.value });
   };
 
   return (
