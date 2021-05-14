@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Button, Container, TextField, Box } from '@material-ui/core';
 
-import useStyles from './styles';
+import useStyles from './Styles/styles';
 import fetchWeather from './API';
 
 import './styles.css';

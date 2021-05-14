@@ -2,6 +2,14 @@ span {
   color: cyan;
 }
 
+.loading-on {
+  display: none;
+}
+
+.loading-on {
+  display: block;
+}
+
 div {
   border: 1px solid cyan;
 }
