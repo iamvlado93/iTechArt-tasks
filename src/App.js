@@ -9,11 +9,11 @@ import TodoForm from './modules/ToDoApp';
 import CounterRedux from './modules/CounterRedux';
 import StyledComponents from './modules/StyledComponents';
 import SimpleTodoRedux from './modules/SimpleTodoRedux';
+import WeatherAPI from './modules/weatherAPI';
 
 import ROUTES from './const';
 
 import './App.css';
-
 
 export default function App() {
   return (
@@ -39,6 +39,9 @@ export default function App() {
         </Link>
         <Link to={ROUTES.SIMPLE_TODO_REDUX}>
           <button type="button">Simple Todo Redux</button>
+        </Link>
+        <Link to={ROUTES.WEATHER_API}>
+          <button type="button">Weather API</button>
         </Link>
       </nav>
 
@@ -73,6 +76,10 @@ export default function App() {
 
         <Route path={ROUTES.SIMPLE_TODO_REDUX}>
           <SimpleTodoRedux />
+        </Route>
+
+        <Route path={ROUTES.WEATHER_API}>
+          <WeatherAPI />
         </Route>
       </Switch>
     </Router>

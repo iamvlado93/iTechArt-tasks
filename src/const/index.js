@@ -7,6 +7,7 @@ const ROUTES = {
   COUNTER_REDUX: '/counter-redux',
   STYLED_COMPONENTS: '/styled-components',
   SIMPLE_TODO_REDUX: '/simple-todo-redux',
+  WEATHER_API: '/weather-api',
 };
 
 export default ROUTES;
