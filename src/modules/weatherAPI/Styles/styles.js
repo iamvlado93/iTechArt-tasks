@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   },
 
   buttonStyle: {
-    margin: '20px',
+    margin: '5px',
     background: 'none',
     width: '100px',
     height: '25px',
@@ -27,6 +27,7 @@ const useStyles = makeStyles({
   },
 
   containerStyle: {
+    marginTop: '20px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',

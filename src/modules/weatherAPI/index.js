@@ -4,6 +4,7 @@ import { Button, Container, TextField, Box } from '@material-ui/core';
 
 import useStyles from './Styles/styles';
 import fetchWeather from './API';
+import SkeletonWeather from './Skeleton/skeletonWeather';
 
 import './styles.css';
 
@@ -11,16 +12,23 @@ const App = () => {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const search = async () => {
     if (query === '') {
       setError(true);
     } else {
+      setLoading(true);
       const data = await fetchWeather(query);
       setWeather(data);
       setQuery('');
       setError(false);
+      setLoading(false);
     }
+  };
+
+  const clear = () => {
+    setWeather('');
   };
 
   const classes = useStyles();
@@ -41,6 +49,10 @@ const App = () => {
       <Button className={classes.buttonStyle} onClick={search} type="button">
         Search
       </Button>
+      <Button className={classes.buttonStyle} onClick={clear} type="button">
+        Clear
+      </Button>
+      {loading ? <SkeletonWeather /> : ''}
       {weather.main && (
         <Container className={classes.containerStyle}>
           <h2 className={classes.headerStyle}>
